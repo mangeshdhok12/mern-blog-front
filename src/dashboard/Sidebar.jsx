@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 function Sidebar({ setComponent }) {
   const { profile, setIsAuthenticated } = useAuth();
-  // console.log(profile?.user);
+ 
   const navigateTo = useNavigate();
 
   const [show, setShow] = useState(false);
@@ -28,11 +28,11 @@ function Sidebar({ setComponent }) {
         { withCredentials: true }
       );
       toast.success(data.message);
-       localStorage.removeItem("jwt"); // deleting token in localStorage so that if user logged out it will goes to login page
+       localStorage.removeItem("jwt"); 
       setIsAuthenticated(false);
       navigateTo("/login");
     } catch (error) {
-      // console.log(error);
+    
       toast.error(error.data.message || "Failed to logout");
     }
   };

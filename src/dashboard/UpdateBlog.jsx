@@ -15,7 +15,7 @@ function UpdateBlog() {
   const [blogImagePreview, setBlogImagePreview] = useState("");
 
   const changePhotoHandler = (e) => {
-    // console.log(e);
+    
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -38,13 +38,13 @@ function UpdateBlog() {
             },
           }
         );
-        // console.log(data);
+        
         setTitle(data?.title);
         setCategory(data?.category);
         setAbout(data?.about);
         setBlogImage(data?.blogImage.url);
       } catch (error) {
-        // console.log(error);
+       
         toast.error("Please fill the required fields");
       }
     };
@@ -70,11 +70,11 @@ function UpdateBlog() {
           },
         }
       );
-      // console.log(data);
+     
       toast.success(data.message || "Blog updated successfully");
       navigateTo("/");
     } catch (error) {
-      // console.log(error);
+      
       toast.error(
         error.response.data.message || "Please fill the required fields"
       );
