@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 function Creators() {
   const [creators, setCreators] = useState([]);
-  console.log(creators);
+ 
   useEffect(() => {
     const fetchCreators = async () => {
       try {
@@ -15,7 +15,7 @@ function Creators() {
         );
         setCreators(data.admins);
       } catch (error) {
-        console.log(error);
+     
       }
     };
     fetchCreators();

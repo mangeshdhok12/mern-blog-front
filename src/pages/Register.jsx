@@ -19,7 +19,7 @@ function Register() {
   const [photoPreview, setPhotoPreview] = useState("");
 
   const changePhotoHandler = (e) => {
-    console.log(e);
+  
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -50,7 +50,7 @@ function Register() {
           },
         }
       );
-      console.log(data);
+      // console.log(data);
       localStorage.setItem("jwt", data.token); // storing token in localStorage so that if user refreshed the page it will not redirect again in login
       toast.success(data.message || "User registered successfully");
       setProfile(data);
@@ -65,7 +65,7 @@ function Register() {
       setPhotoPreview("");
       navigateTo("/");
     } catch (error) {
-      console.log(error);
+      
       toast.error(
         error.response.data.message || "Please fill the required fields"
       );

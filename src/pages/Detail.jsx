@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 function Detail() {
   const { id } = useParams();
   const [blogs, setblogs] = useState({});
-  console.log(blogs);
+ 
   useEffect(() => {
     const fetchblogs = async () => {
       try {
@@ -20,10 +20,10 @@ function Detail() {
             },
           }
         );
-        console.log(data);
+     
         setblogs(data);
       } catch (error) {
-        console.log(error);
+       
       }
     };
     fetchblogs();
@@ -56,7 +56,7 @@ function Detail() {
               )}
               <div className="md:w-1/2 w-full md:pl-6">
                 <p className="text-lg mb-6">{blogs?.about}</p>
-                {/* Add more content here if needed */}
+                
               </div>
             </div>
           </section>
